@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Sacacorchos",
+    "url": "https://www.homesentry.co/p/sacacorchos-ilko-metalico/",
+    "imageUrl": "img/sacacorchos.jpg",
+    "originalPrice": 40000,
+    "price": 20000,
+    "details": ["ENTREGA INMEDIATA", "Sacacorchos/destapador", "Como nuevo"],
+    "state": "available",
+    "purchaser": "id",
+    "category": "Utensilios de cocina"
+  },
+  {
+    "name": "Cuello",
+    "url": "img/cuello.jpg",
+    "imageUrl": "img/cuello.jpg",
+    "originalPrice": 33240,
+    "price": 15000,
+    "details": ["ENTREGA INMEDIATA", "Un uso"],
+    "state": "available",
+    "purchaser": "id",
+    "category": "Ropa"
+  },
+  {
+    "name": "Monitor Samsung 24' Led HDMI mas brazo para escritorio",
+    "imageUrl": "img/monitor-samsung.jpg",
+    "url": "img/monitor-samsung-collage.jpg",
+    "originalPrice": 411000,
+    "price": 250000,
+    "details": [
+      "ENTREGA 08 de Septiembre",
+      "Link referencia Monitor https://www.mercadolibre.com.co/monitor-gamer-samsung-s24f350fh-led-24-negro-100v240v/p/MCO14946790",
+      "Link referencia Brazo https://ergonomus.co/producto/brazo-monitor-flexigas-eco/",
+      "Perfecto funcionamiento!(Al momento de instalar el brazo se partio en la parte trasera, daño muy inusculo que no afecta el funcionamiento)"
+    ],
+    "state": "sold",
+    "purchaser": "id",
+    "category": "Electrónicos"
+  },
+  {
+    "name": "Monitor Samsung 24' Led HDMI mas brazo para escritorio",
+    "imageUrl": "img/monitor-samsung.jpg",
+    "url": "img/monitor-samsung-collage.jpg",
+    "originalPrice": 411000,
+    "price": 250000,
+    "details": [
+      "ENTREGA 08 de Septiembre",
+      "Link referencia Monitor https://www.mercadolibre.com.co/monitor-gamer-samsung-s24f350fh-led-24-negro-100v240v/p/MCO14946790",
+      "Link referencia Brazo https://ergonomus.co/producto/brazo-monitor-flexigas-eco/",
+      "Perfecto funcionamiento!(Al momento de instalar el brazo se partio en la parte trasera, daño muy inusculo que no afecta el funcionamiento)"
+    ],
+    "state": "sold",
+    "purchaser": "id",
+    "category": "Electrónicos"
+  }
+]

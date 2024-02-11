@@ -1,13 +1,222 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a:link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  line-height: 30px;
+  background-color: #7f1bf8;
+  font-family: "Sixtyfour", sans-serif;
+
+  color: #fff;
+  font-size: 20px;
+
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  padding: 0 0.2rem;
+
+  color: #08ce8c;
+  text-align: center;
+}
+
+.subtitle h4 {
+  font-weight: lighter;
+
+  font-style: italic;
+  font-size: smaller;
+
+  color: orangered;
+}
+
+.subtitle h2 {
+  font-weight: lighter;
+
+  font-style: italic;
+  font-size: smaller;
+
+  color: #7f1bf8;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.product {
+  height: max-content;
+  width: 350px;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  margin-left: 0px;
+  overflow: hidden;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #d6d6d6; /* Añade un borde de 1px sólido con color gris claro */
+}
+.product:hover {
+  transform: translateY(-5px);
+}
+.img-wrapper {
+  width: 100%;
+  height: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.product-img-filter-sold,
+.product-img-filter-notavailable,
+.product-img-filter-reserved {
+  width: 100%;
+  height: 250px;
+  object-fit: scale-down;
+  opacity: 0.2;
+  border-bottom: 1px solid #891616;
+}
+
+.product h3 {
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.product-details {
+  margin-left: -5px;
+  color: #373737;
+  display: flex;
+  color: #676565;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.desctexto {
+  display: flex;
+  text-align: start;
+  word-break: break-all;
+  font-size: small;
+  align-items: start;
+  width: 90%;
+}
+
+.product-details li {
+  margin-bottom: 2px;
+}
+
+.discount {
+  height: 41px;
+  width: 41px;
+  line-height: 45px;
+  background-color: #7f1bf8;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 2px;
+  text-align: center;
+  position: relative;
+  margin-top: -50px;
+  margin-right: -10px;
+  z-index: 10;
+}
+
+.price {
+  bottom: 5px;
+  height: 20px;
+  line-height: 15px;
+  color: #000b07;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  max-height: fit-content;
+  flex-direction: row;
+  border-radius: 10px;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.icon {
+  background-color: #00b652;
+  align-items: flex-end;
+  height: 20px;
+}
+.payment {
+  background-color: #00b652;
+  color: rgb(247, 240, 241);
+  border: #7f1bf8;
+  height: 10px;
+  cursor: pointer;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  background-color: #00b652;
+  border-radius: 10px;
+  border-width: 2px;
+}
+.productheader {
+  display: flex;
+  background-color: #7f1bf8;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1%;
+}
+.product-span {
+  margin: 0;
+  color: #2eb600;
+  font-weight: 900;
+  text-align: end;
+}
+
+.product-title {
+  display: flex;
+  margin-top: 5px;
+  padding: 1px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.product-title h3 {
+  margin-top: 10;
+  font-size: 12px; /* Elimina el margen predeterminado del h3 */
+}
+
+.product-title span {
+  font-size: 14px; /* Establece el tamaño de fuente del span */
+}
+.category {
+  font-weight: 900;
+  font-size: small;
+  text-transform: uppercase;
+  color: #f8f4f2;
+  font-style: italic;
 }
