@@ -1,0 +1,14 @@
+{
+  "event_name": "VENTA DE GARAGE DENI Y MAXI",
+  "startdate": "00",
+  "finishdate": "2024-03-24T00:00:00",
+  "address": "ALMAFUERTE 636",
+  "zone": "PARQUE PATRICIOS",
+  "welcome": "Todos los productos se retiran a 2 cuadras de las estacion Hospitales linea H, si te gustá algo escribinos",
+  "owners": "Deni y Maxi",
+  "contact": "+1133391312",
+  "apiKey": "AIzaSyCq13uUwLiRUA9YOA64RL7cVr1yA3VXD38",
+  "spreadsheetId": "1N2BrXwfYSBBeu-nVNUDDRaaO2VxI0SNqjkILNUP22Fo",
+  "sheetName": "prod",
+  "baseUrl_google": "https://sheets.googleapis.com/v4/spreadsheets/"
+}

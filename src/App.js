@@ -6,8 +6,11 @@ import useGoogleSheetData from "./hooks/useGoogleSheetData";
 import SearchProducts from "./components/SearchProducts";
 import ErrorDialog from "./components/ErrorDialog";
 import config from "./config.json";
+import CountDown from "./components/CountDown";
 
 const App = () => {
+  //config inicial
+  const { welcome, owners, event_name, finishdate } = config;
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const { products, loading, errorDialogOpen, setErrorDialogOpen, errorMessage } =
     useGoogleSheetData();
@@ -55,26 +58,20 @@ const App = () => {
           element={
             <div>
               <header>
-                Venta de GARAGE 😎✈
+                {event_name} 😎✈
                 <br />
-                Deni y Maxi
+                {owners}
+                <CountDown finishDate={finishdate} />
               </header>
+
               <CategoryFilter
                 categories={getUniqueCategories(products)}
                 selectedCategory={selectedCategory}
                 onCategoryChange={handleCategoryChange}
               />
-              <SearchProducts // Paso 3: Pasar searchTerm y setSearchTerm como props
-                searchTerm={searchTerm}
-                onSearchChange={handleSearchChange}
-              />
+              <SearchProducts searchTerm={searchTerm} onSearchChange={handleSearchChange} />
               <div className="subtitlecontainer">
-                <p>
-                  Todos los productos se retiran por Parque Patricios (a 2 cuadras de estación
-                  Hospitales linea H)
-                </p>
-                <p>Las entregas se hacen hasta el día: 24/03/2024</p>
-                Si te gusta algo escribínos
+                <p> {welcome} </p>
                 <h2>NO HACEMOS ENVIOS</h2>
               </div>
 

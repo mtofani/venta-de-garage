@@ -2,15 +2,16 @@ body {
   margin: 0;
   line-height: 1;
   overflow-x: hidden;
-t}
+}
 .container {
   margin-top: 3%;
+  max-width: fit-content;
   width: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2%;
+  padding: 3%;
 }
 
 .subtitlecontainer {
@@ -378,7 +379,7 @@ hr {
 
 /* Estilo para el input de búsqueda */
 .search-input {
-  width: 40%;
+  width: 60%;
   text-align: start;
   color: #7f1bf8;
   border: #000b07; /* Sin borde */
@@ -399,12 +400,33 @@ hr {
   font-size: medium;
   color: #666464;
   position: absolute;
-  right: 30%;
+  right: 20%;
   background-color: transparent !important;
 }
 .buttonSearch:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emptyproducts {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+}
+
+.counterDiv {
+  display: flex;
+  padding: 1px;
+  height: min-content;
+  position: relative;
+  margin-right: 4px;
+  flex-direction: row;
+  justify-content: end;
+  color: rgb(240, 232, 232);
+  font-size: 6px;
+  font-family: "Roboto", Courier, monospace;
 }
 
 @keyframes progress {
