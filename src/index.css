@@ -1,7 +1,32 @@
 body {
   margin: 0;
+  line-height: 1;
+  overflow-x: hidden;
+t}
+.container {
+  margin-top: 3%;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2%;
 }
 
+.subtitlecontainer {
+  margin: auto; /* Márgenes automáticos horizontalmente */
+  margin-top: 2%;
+  text-align: center;
+  font-size: small;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.subtitlecontainer h2 {
+  color: #7f1bf8;
+}
 a:link {
   text-decoration: none;
   cursor: pointer;
@@ -50,20 +75,11 @@ header {
   color: #7f1bf8;
 }
 
-.container {
-  margin-top: 3%;
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
 .product {
   height: max-content;
   width: 340px;
   margin: 0 0 20px 0;
-  padding: 2px;
+  padding: 0px;
   margin-left: 0px;
   overflow: hidden;
   display: flex;
@@ -128,7 +144,7 @@ header {
   word-break: break-all;
   font-size: small;
   align-items: start;
-  width: 90%;
+  width: 95%;
 }
 
 .product-details li {
@@ -176,11 +192,13 @@ header {
 .box {
   display: flex;
   width: 100%;
+
   max-height: fit-content;
   flex-direction: row;
-  border-radius: 10px;
+  border-radius: 8px;
   align-items: end;
   justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
@@ -200,6 +218,7 @@ header {
 
 .contact {
   display: flex;
+  height: 30px;
   flex-direction: row;
   padding: 5px;
   background-color: #00b652;
@@ -342,6 +361,50 @@ hr {
 
 .h2prod {
   color: #7f1bf8;
+}
+
+/* SearchProducts.css */
+
+/* Estilo para el contenedor principal */
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  padding: 8px; /* Espacio interno */
+}
+
+/* Estilo para el input de búsqueda */
+.search-input {
+  width: 40%;
+  text-align: start;
+  color: #7f1bf8;
+  border: #000b07; /* Sin borde */
+  outline: invert; /* Sin contorno de foco */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 8px; /* spacio interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+  color: #7f1bf8; /* Color del placeholder */
+  opacity: 0.5; /* Opacidad del placeholder */
+}
+.buttonSearch {
+  border: none;
+  font-size: medium;
+  color: #666464;
+  position: absolute;
+  right: 30%;
+  background-color: transparent !important;
+}
+.buttonSearch:hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes progress {
