@@ -1,17 +1,32 @@
-import React from "react";
+import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ProductDetail from "./ProductDetail"; // Importa ProductDetail
+import config from "../config.json";
+
+const { contactNumber, contactName } = config;
 
 const Product = ({ product }) => {
-  const formatPrice = (p) =>
-    p.toLocaleString("es-CO", {
-      style: "currency",
-      currency: "COP",
-      maximumFractionDigits: "0",
-    });
+  const [details, setDetails] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleVerMas = () => {
+    setDetails(product.details);
+
+    // Navega a la ruta deseada
+    navigate(`/producto/${product.name}`, { state: { product } });
+  };
+  const formatPrice = (p) => {
+    //MUESTRA EN FORMATO PESOS ARGENTINOS  AGREGANDO UN . COMO SEPARADOR DE MILES
+    return p.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
+  //.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   const discount = Math.round(100 - (product.price / product.originalPrice) * 100);
 
   const goWhatsapp = () =>
     window.open(
-      `https://api.whatsapp.com/send?phone=+541141764144&text=Hola Deni! Quiero el producto ${product.name} } 😊`,
+      `https://api.whatsapp.com/send?phone=${contactNumber}&text=Hola ${contactName} Quiero el producto ${product.name} 😊`,
       "_blank"
     );
 
@@ -81,12 +96,16 @@ const Product = ({ product }) => {
         <div className="desctexto">
           <ul>
             {Array.isArray(product.details)
-              ? product.details.map((detail, index) => <li key={index}>{detail}</li>)
-              : product.details.split(";").map((detail, index) => <li key={index}>{detail}</li>)}
+              ? product.details.map((detail, index) => <p key={index}>{detail}</p>)
+              : product.details.split(";").map((detail, index) => (
+                  <li key={index} className={detail.length > 60 ? "long-detail" : "short-detail"}>
+                    {detail}
+                  </li>
+                ))}
           </ul>
         </div>
       </div>
-      <div onClick={goWhatsapp} className="box">
+      <div className="box">
         <div className="price">
           <span className="previousPrice">${formatPrice(product.originalPrice)}</span>
           <span>${formatPrice(product.price)}</span>
@@ -95,10 +114,19 @@ const Product = ({ product }) => {
         {product.state !== "sold" && (
           <div className="contact">
             <img className="icon" src="./whatsapp-icon.png" alt="WhatsApp Icon" />
-            <button className="payment">Comprar</button>
+            <button onClick={goWhatsapp} className="payment">
+              Comprar
+            </button>
           </div>
         )}
       </div>
+      {/*   <div className="more">
+        /*
+        <button className="buttonnav" onClick={handleVerMas}>
+         + Info
+       </button>
+        
+      </div> */}
     </div>
   );
 };

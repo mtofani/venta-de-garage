@@ -7,6 +7,7 @@ const useGoogleSheetData = () => {
   const [loading, setLoading] = useState(true);
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [validProductCount, setValidProductCount] = useState(0);
 
   const obtenerURLThumbnailDesdeURL = (url) => {
     const expresionRegular = /\/d\/([a-zA-Z0-9_-]+)\/view/i;
@@ -31,8 +32,6 @@ const useGoogleSheetData = () => {
       const baseurl = config.baseUrl_google;
       const url = `${baseurl}${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
 
-      console.log(url);
-
       try {
         // Verificar si ya ha pasado suficiente tiempo desde la última llamada a la API
         const lastApiCallTime = localStorage.getItem("lastApiCallTime");
@@ -55,17 +54,20 @@ const useGoogleSheetData = () => {
         const jsonData = arr
           .slice(1)
           .map((row) => {
-            const imageUrl = row[6];
-            const thumbnailUrl = imageUrl ? obtenerURLThumbnailDesdeURL(imageUrl) : null;
-
+            const localImageName = row[6] || "";
+            let imageUrl = row[7];
+            //COmentado de google thumbnails
+            //const thumbnailUrl = imageUrl ? obtenerURLThumbnailDesdeURL(imageUrl) : null;
             const name = row[0] || "";
             const price = row[1] || "";
             const originalPrice = row[2] || "";
             const state = row[3] || "";
             const details = row[4] || "";
             const category = row[5] || "";
+            const priority = row[8] || 0; // Se lee el valor de prioridad desde la posición 8
+            console.log(price, originalPrice);
 
-            const isValid = name && price && originalPrice; // Check básico de validez
+            const isValid = name && price && details; // Check básico de validez
 
             if (!isValid) {
               console.warn(
@@ -74,6 +76,8 @@ const useGoogleSheetData = () => {
               return null; // Omitir el producto si falta algún campo requerido
             }
 
+            if (localImageName !== "") imageUrl = localImageName;
+
             return {
               name,
               price,
@@ -81,7 +85,8 @@ const useGoogleSheetData = () => {
               state,
               details,
               category,
-              imageUrl: thumbnailUrl,
+              imageUrl,
+              priority,
             };
           })
           .filter((product) => product !== null); // Filtrar productos nulos
@@ -89,6 +94,7 @@ const useGoogleSheetData = () => {
         setProducts(jsonData);
         setLoading(false);
         localStorage.setItem("lastApiCallTime", currentTime);
+        setValidProductCount(jsonData.length);
       } catch (error) {
         setErrorMessage(
           "Hubo un error al cargar los datos. Por favor, inténtalo de nuevo más tarde."
@@ -102,7 +108,14 @@ const useGoogleSheetData = () => {
     fetchData();
   }, []);
 
-  return { products, loading, errorDialogOpen, setErrorDialogOpen, errorMessage };
+  return {
+    products,
+    loading,
+    errorDialogOpen,
+    setErrorDialogOpen,
+    errorMessage,
+    validProductCount,
+  };
 };
 
 export default useGoogleSheetData;

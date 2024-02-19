@@ -1,17 +1,151 @@
-body {
-  margin: 0;
-  line-height: 1;
+html {
   overflow-x: hidden;
 }
-.container {
-  margin-top: 3%;
-  max-width: fit-content;
+
+ul {
+  margin-left: 0;
+  left: 0;
+}
+
+p {
+  margin: auto 2px 4px;
+}
+body {
   width: auto;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: auto;
+  overflow-x: hidden;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+  align-items: stretch; /* Estira los elementos para que ocupen todo el ancho */
+}
+.welcomeDiv {
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  justify-content: center;
+  text-align: center;
+  font-size: 15px; /* Alinea los elementos al inicio */
+}
+.counterDiv {
+  align-self: end;
+  letter-spacing: 1px;
+  height: min-content;
+  text-align: center;
+  position: relative;
+  margin-right: 10px;
+  color: rgb(240, 232, 232);
+  font-size: 6px;
+  font-family: "Roboto", Courier, monospace;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  background-color: #7f1bf8;
+  font-family: "Sixtyfour", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 5px;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Media query para dispositivos con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 4%; /* Aumentar el padding horizontal para dispositivos móviles */
+    justify-content: flex-start; /* Alinear los elementos al principio en dispositivos móviles */
+  }
+}
+
+.filters {
+  display: flex;
+  border-color: #353535;
+  border-width: 1px;
+  width: 100%;
+  flex-direction: column;
+  align-items: end;
   justify-content: space-between;
+}
+.categoryFilter {
+  display: flex;
+  color: #353535;
+  justify-content: end;
+  align-items: center;
+}
+
+.stateFilter {
+  display: flex;
+  color: #353535;
+  justify-content: end;
+  align-items: center;
+}
+
+.filterOrder {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.selectOrder {
+  display: flex;
+  background-color: #e8f1e8; /* Color de fondo */
+  color: rgb(48, 47, 47); /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  align-items: center;
+}
+.spanOrder {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 9px;
+  text-align: center;
+}
+.productcontainer {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3%;
   align-items: flex-start;
-  padding: 3%;
+}
+
+.product {
+  width: 350px;
+  height: 420px;
+  margin: 0 15px 20px 0;
+  padding: 0px;
+  margin-left: 0px;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%; /* Cambia el ancho a 100% en pantallas más pequeñas */
+  }
 }
 
 .subtitlecontainer {
@@ -25,6 +159,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.subtitlecontainer p {
+  font-family: "Roboto";
+  font-weight: 600;
+}
 .subtitlecontainer h2 {
   color: #7f1bf8;
 }
@@ -37,17 +175,6 @@ h2 {
   margin-left: 5px;
   font-family: "Sixtyfour", sans-serif;
   font-size: smaller;
-}
-
-header {
-  line-height: 30px;
-  background-color: #7f1bf8;
-  font-family: "Sixtyfour", sans-serif;
-  color: #fff;
-  font-size: 20px;
-  margin-bottom: 10px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .subtitle {
@@ -76,28 +203,14 @@ header {
   color: #7f1bf8;
 }
 
-.product {
-  height: max-content;
-  width: 340px;
-  margin: 0 0 20px 0;
-  padding: 0px;
-  margin-left: 0px;
-  overflow: hidden;
-  display: flex;
-  align-self: flex-start;
-  flex-direction: column;
-  justify-content: start;
-  align-items: stretch;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 .product:hover {
   transform: translateY(-5px);
 }
 .img-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 200px;
+  height: 250px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-bottom: 1px solid #d6d6d6;
@@ -131,25 +244,50 @@ header {
 
 .product-details {
   margin-left: 0px;
-  padding: 3px;
+  overflow: hidden;
+  flex: 1;
+  padding: 1px;
   color: #373737;
+  width: 90%;
+  text-overflow: ellipsis;
   display: flex;
   color: #676565;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .desctexto {
+  margin-top: 5%;
   display: flex;
-  text-align: start;
-  word-break: break-all;
-  font-size: small;
+  font-family: "Roboto";
+  width: 99%;
   align-items: start;
-  width: 95%;
+  justify-content: start;
+  flex-direction: row;
+
+  overflow: hidden;
+  height: min-content;
+}
+.desctexto p {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 12px;
+  line-height: 1.3;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.desctexto li {
 }
 
-.product-details li {
-  margin-bottom: 2px;
+.long-detail {
+  font-size: x-small;
+}
+.short-detail {
+  font-size: 14px;
 }
 
 .discount {
@@ -170,6 +308,7 @@ header {
 }
 
 .price {
+  font-family: "Roboto";
   height: 18px;
   line-height: 12px;
   color: #000b07;
@@ -182,7 +321,7 @@ header {
 }
 
 .previousPrice {
-  color: rgb(184, 12, 12) !important;
+  color: rgb(3, 122, 47) !important;
   text-decoration: line-through;
   font-size: 14px;
   margin-bottom: 5px;
@@ -193,23 +332,24 @@ header {
 .box {
   display: flex;
   width: 100%;
-
-  max-height: fit-content;
+  height: min-content;
+  max-height: min-content;
   flex-direction: row;
   border-radius: 8px;
   align-items: end;
   justify-content: space-between;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
 }
 
 .icon {
   background-color: #00b652;
   align-items: flex-end;
+
   height: 20px;
 }
 .payment {
   background-color: #00b652;
+
   color: rgb(247, 240, 241);
   border: #7f1bf8;
   font-size: 11px;
@@ -231,7 +371,6 @@ header {
   background-color: #7f1bf8;
   flex-direction: row;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Desplazamiento horizontal, desplazamiento vertical, desenfoque, color */
-
   justify-content: space-between;
   padding: 1%;
 }
@@ -241,22 +380,21 @@ header {
   font-weight: 400;
   font-size: small;
   font-family: "Sixtyfour", sans-serif;
-
   text-align: end;
 }
 
 .product-title {
   display: flex;
-  margin-top: 5px;
-  padding: 1px;
-  justify-content: space-between;
+  height: 10px;
+  margin-bottom: 5px;
+  padding: 3px;
   flex-direction: row;
   align-items: flex-start;
 }
 
 .product-title h3 {
-  margin-top: 10;
-  font-size: 12px; /* Elimina el margen predeterminado del h3 */
+  font-size: 11px;
+  /* Elimina el margen predeterminado del h3 */
 }
 
 .product-title span {
@@ -293,35 +431,6 @@ header {
   padding: 1px 2.5px;
   color: red;
 }
-.categoryFilter {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  padding: 5px;
-  font-size: 15px;
-}
-/* Estilo base para el select */
-select {
-  margin: 1px;
-  padding: 3px;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  color: #333;
-  cursor: pointer; /* Cambia el cursor al pasar sobre el select */
-}
-
-/* Estilo al pasar el cursor sobre el select */
-select:hover {
-  border-color: #999;
-}
-
-/* Estilo al enfocar el select */
-select:focus {
-  border-color: #555;
-  outline: none; /* Elimina el contorno al hacer clic */
-}
 
 .avion {
   position: fixed;
@@ -329,7 +438,7 @@ select:focus {
   left: -50px; /* Posición inicial del avión fuera de la pantalla */
   font-size: 40px; /* Tamaño del avión */
   animation: moverAvion 10s linear infinite; /* Aplicando la animación */
-  z-index: 2; /* Asegura que el avión esté encima de las nubes */
+  z-index: 12; /* Asegura que el avión esté encima de las nubes */
 }
 
 .progress {
@@ -361,6 +470,9 @@ hr {
 }
 
 .h2prod {
+  padding: 1px;
+  font-size: 12px;
+  height: 10px;
   color: #7f1bf8;
 }
 
@@ -388,19 +500,37 @@ hr {
   border: 1px solid #ccc; /* Borde gris */
   border-radius: 15px; /* Bordes redondeados */
   padding: 8px; /* spacio interno */
+  font-size: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .search-input::placeholder {
   color: #7f1bf8; /* Color del placeholder */
+
   opacity: 0.5; /* Opacidad del placeholder */
+}
+
+.spanFilter {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 9px;
+  text-align: center;
+}
+.categorySpan {
+  font-size: 9px;
+  font-family: "Sixtyfour", sans-serif;
+  text-align: end;
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+.button:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
 }
 .buttonSearch {
   border: none;
   font-size: medium;
   color: #666464;
   position: absolute;
-  right: 20%;
+  right: 24%;
   background-color: transparent !important;
 }
 .buttonSearch:hover {
@@ -416,17 +546,91 @@ hr {
   flex-direction: row;
 }
 
-.counterDiv {
+.product-detail {
   display: flex;
-  padding: 1px;
-  height: min-content;
-  position: relative;
-  margin-right: 4px;
-  flex-direction: row;
-  justify-content: end;
-  color: rgb(240, 232, 232);
-  font-size: 6px;
-  font-family: "Roboto", Courier, monospace;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Agrega un relleno alrededor de la tarjeta */
+  font-family: "Sixtyfour", sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* Agrega un borde sólido */
+}
+.product-detail p {
+  margin: 0 auto;
+
+  text-align: center; /* Centra el texto */
+  max-width: 800px; /* Establece el ancho máximo */
+}
+
+.img-detail {
+  width: 100%; /* Haz que la imagen ocupe todo el ancho del contenedor */
+  max-width: 100px; /* Establece un tamaño máximo para la imagen */
+  height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  border-radius: 10px; /* Añade bordes redondeados a la imagen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra a la imagen */
+  margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen del contenido siguiente */
+}
+
+.product-info {
+  text-align: center; /* Centra el texto dentro del contenedor */
+  font-family: "Sixtyfour", sans-serif;
+}
+
+.product-description {
+  font-size: 16px; /* Tamaño de fuente más pequeño para la descripción del producto */
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+
+.buttonnav {
+  border: none;
+  color: #7f1bf8;
+  font-size: medium;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: groove;
+  font-family: "Roboto";
+  background-color: transparent !important;
+}
+
+.more {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.more button {
+  margin-top: 2.5px;
+  font-size: 10px;
+  width: 45px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  margin: 1px;
+  padding: 3px;
+  border-radius: 5px;
+  color: white; /* Color del texto */
+  border: 1px solid #ccc;
+  font-size: 11px;
+  color: #333;
+  background-color: #e0ece0; /* Color de fondo */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el select */
+  text-align: center;
+}
+
+/* Estilo al pasar el cursor sobre el select */
+select:hover {
+  border-color: #999;
+}
+
+/* Estilo al enfocar el select */
+select:focus {
+  border-color: #555;
+  outline: none; /* Elimina el contorno al hacer clic */
 }
 
 @keyframes progress {
@@ -437,7 +641,9 @@ hr {
     transform: translateX(1440px);
   }
 }
-
+.boxDetailed {
+  align-items: center;
+}
 @keyframes moverAvion {
   0% {
     transform: translate(0px, 0px); /* Empieza en la posición inicial */

@@ -33,9 +33,8 @@ const CountDown = ({ finishDate }) => {
   return (
     <div className="counterDiv">
       {timeLeft.days > 0 && (
-        <h1>{` ⌛ Finaliza en: ${timeLeft.days} días ${formatTime(timeLeft.hours)}:${formatTime(
-          timeLeft.minutes
-        )} horas`}</h1>
+        <h1>{` Finaliza en ${timeLeft.days} 
+         Dias 🔥 `}</h1>
       )}
     </div>
   );

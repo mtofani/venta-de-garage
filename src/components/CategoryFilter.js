@@ -3,7 +3,7 @@ import React from "react";
 const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
   return (
     <div className="categoryFilter">
-      <h2>Filtrar por categoría:</h2>
+      <span className="categorySpan">Filtrar por categoría:</span>
       <select value={selectedCategory} onChange={(e) => onCategoryChange(e.target.value)}>
         {categories.map((category, index) => (
           <option key={index} value={category}>
