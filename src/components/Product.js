@@ -26,7 +26,7 @@ const Product = ({ product }) => {
 
   const goWhatsapp = () =>
     window.open(
-      `https://api.whatsapp.com/send?phone=${contactNumber}&text=Hola ${contactName} Quiero el producto ${product.name} 😊`,
+      `https://api.whatsapp.com/send?phone=${contactNumber}&text=Hola ${contactName}, quiero el producto ${product.name} 😊`,
       "_blank"
     );
 
@@ -98,7 +98,7 @@ const Product = ({ product }) => {
             {Array.isArray(product.details)
               ? product.details.map((detail, index) => <p key={index}>{detail}</p>)
               : product.details.split(";").map((detail, index) => (
-                  <li key={index} className={detail.length > 60 ? "long-detail" : "short-detail"}>
+                  <li key={index} className={detail.length > 80 ? "long-detail" : "short-detail"}>
                     {detail}
                   </li>
                 ))}

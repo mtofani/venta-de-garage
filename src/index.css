@@ -36,20 +36,28 @@ body {
 }
 .counterDiv {
   align-self: end;
-  letter-spacing: 1px;
-  height: min-content;
-  text-align: center;
+  letter-spacing: 1.5px;
+  display: flex;
   position: relative;
-  margin-right: 10px;
+  margin-right: 5px;
   color: rgb(240, 232, 232);
-  font-size: 6px;
   font-family: "Roboto", Courier, monospace;
+}
+
+.counterDiv h1 {
+  font-size: 8px;
+  font-weight: 800;
+  font-family: "Sixtyfour", sans-serif;
+  margin: 0 auto;
+  align-self: flex-end;
+  padding: 1px;
 }
 
 header {
   width: 100%;
-  height: 100px;
   display: flex;
+  flex: 1;
+  padding: 1 px;
   flex-direction: column;
   line-height: 30px;
   background-color: #7f1bf8;
@@ -64,7 +72,7 @@ header {
 /* Media query para dispositivos con un ancho máximo de 768px */
 @media screen and (max-width: 768px) {
   .container {
-    padding: 0 4%; /* Aumentar el padding horizontal para dispositivos móviles */
+    padding-right: 2%; /* Aumentar el padding horizontal para dispositivos móviles */
     justify-content: flex-start; /* Alinear los elementos al principio en dispositivos móviles */
   }
 }
@@ -114,24 +122,26 @@ header {
   text-align: center;
 }
 .productcontainer {
-  width: 100%;
+  margin: 0;
+  width: 99%;
+
   display: flex;
   flex: 1;
   overflow-x: hidden;
   padding-right: 15px;
   padding-left: 15px;
   flex-wrap: wrap;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
   justify-content: center;
   margin-top: 3%;
-  align-items: flex-start;
 }
 
 .product {
   width: 350px;
-  height: 420px;
-  margin: 0 15px 20px 0;
-  padding: 0px;
-  margin-left: 0px;
+  height: 435px;
+  margin: 10px;
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -151,9 +161,11 @@ header {
 .subtitlecontainer {
   margin: auto; /* Márgenes automáticos horizontalmente */
   margin-top: 2%;
+  margin-bottom: 2%;
   text-align: center;
   font-size: small;
   text-align: center;
+  text-transform: uppercase;
   width: 100%;
   justify-content: center;
   display: flex;
@@ -284,7 +296,7 @@ h2 {
 }
 
 .long-detail {
-  font-size: x-small;
+  font-size: 12px;
 }
 .short-detail {
   font-size: 14px;
@@ -393,7 +405,7 @@ h2 {
 }
 
 .product-title h3 {
-  font-size: 11px;
+  font-size: 12.5px;
   /* Elimina el margen predeterminado del h3 */
 }
 
@@ -460,6 +472,10 @@ h2 {
   position: absolute;
   width: 80px;
 }
+a {
+  font-weight: 900;
+  color: #7f1bf8;
+}
 hr {
   border: 0;
   font-family: "Sixtyfour", sans-serif;
@@ -467,6 +483,13 @@ hr {
   display: block;
   text-align: center;
   width: 100%;
+}
+.productStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
 }
 
 .h2prod {
@@ -476,6 +499,35 @@ hr {
   color: #7f1bf8;
 }
 
+.h3prod {
+  padding: 5px;
+  margin: 1px 1px;
+  font-size: 12px;
+  height: 10px;
+  color: #046b39;
+}
+@media screen and (max-width: 768px) {
+  .productStats {
+    font-family: "Roboto";
+    text-transform: uppercase;
+    flex-direction: row;
+    height: 10px;
+    margin-bottom: 30px;
+  }
+  .h2prod {
+    font-family: "Roboto";
+    font-size: 9px;
+  }
+  .h3prod {
+    font-family: "Roboto";
+    font-size: 9px;
+  }
+}
+
+.searchcant {
+  font-size: 12px;
+  padding: 5px;
+}
 /* SearchProducts.css */
 
 /* Estilo para el contenedor principal */
@@ -524,17 +576,21 @@ hr {
 /* Estilo al pasar el mouse sobre el botón */
 .button:hover {
   background-color: #45a049; /* Color de fondo al pasar el mouse */
+  border: none;
 }
 .buttonSearch {
   border: none;
   font-size: medium;
   color: #666464;
   position: absolute;
-  right: 24%;
-  background-color: transparent !important;
+  right: 20%;
+  font-size: 15px;
+  border: none;
+  background-color: transparent;
 }
 .buttonSearch:hover {
   transition: all 0.3s ease-in-out;
+  border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -610,8 +666,10 @@ hr {
 }
 
 select {
-  margin: 1px;
-  padding: 3px;
+  margin: 3px;
+  padding: 2px;
+  width: 90px; /* Ancho fijo */
+  height: 20px; /* Alto fijo */
   border-radius: 5px;
   color: white; /* Color del texto */
   border: 1px solid #ccc;
@@ -632,6 +690,14 @@ select:focus {
   border-color: #555;
   outline: none; /* Elimina el contorno al hacer clic */
 }
+.buttonHey {
+  align-self: center;
+  justify-self: center;
+  line-height: 1.5;
+  border: none;
+  background-color: transparent;
+  display: flex;
+}
 
 @keyframes progress {
   0% {
@@ -644,6 +710,34 @@ select:focus {
 .boxDetailed {
   align-items: center;
 }
+footer {
+  overflow-x: hidden;
+  height: min-content;
+  position: sticky;
+  display: flex;
+  background-color: red;
+  align-items: center;
+  justify-content: center;
+  background-color: #7f1bf8;
+}
+.signature {
+  letter-spacing: 2px;
+  font-family: "Roboto";
+  color: wheat;
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+
+.signature:hover {
+  color: rgb(241, 165, 22);
+  font-family: "Roboto";
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+}
+
 @keyframes moverAvion {
   0% {
     transform: translate(0px, 0px); /* Empieza en la posición inicial */
