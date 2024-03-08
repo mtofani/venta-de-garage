@@ -6,7 +6,8 @@
 .pnp.js
 
 
-/public/img/*
+/public/img/*.jpg
+/public/img/*.jpeg
 
 # testing
 /coverage
