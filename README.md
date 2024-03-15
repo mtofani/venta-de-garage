@@ -1,4 +1,4 @@
-## garageReact
+## VDG
 El proyecto tiene como objetivo que tengas un medio sencillo y agil para vender tus cosas.
 Los features que tiene actualmente son:
 - Buscador de productos
