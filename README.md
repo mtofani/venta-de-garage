@@ -20,8 +20,11 @@ React + CSS
 
 ## Utilización
 Dado los prereqs.
+- Clonar repo, npm install.
+- npm start
 - Parametrizar el config.json con sus mensajes, datos personales y de contacto.
 - Cargar fotos locales o remotas.
+- npm run build, y subir el estático al hosting que mas les guste.
 - A vender :)
 
 ## Live Demo
