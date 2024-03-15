@@ -1,10 +1,10 @@
-![image](https://github.com/mtofani/garageReact/assets/69044164/f822eb89-31fe-4cac-b832-6b7de90dd84a)# garageReact
+## garageReact
 El proyecto tiene como objetivo que tengas un medio sencillo y agil para vender tus cosas.
 Los features que tiene actualmente son:
 - Buscador de productos
 - Filtros/Ordenamiento
 - Resumen de ventas
-- Contacto por whatsapp indicando articulo
+- Contacto por whatsapp con articulo de interés.
 
 Hay varios puntos de mejora, como agregar carrito, cantidades, details... 
 En fin que espero que cada un@ pueda explotarlo a su necesidad 😎
@@ -18,9 +18,10 @@ En fin que espero que cada un@ pueda explotarlo a su necesidad 😎
 ## Stack 
 React + CSS
 
-## Utilizacion
+## Utilización
 Dado los prereqs.
 - Parametrizar el config.json con sus mensajes, datos personales y de contacto.
+- Cargar fotos locales o remotas.
 - A vender :)
 
 ## Live Demo
