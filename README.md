@@ -1,11 +1,14 @@
-# garageReact
+![image](https://github.com/mtofani/garageReact/assets/69044164/f822eb89-31fe-4cac-b832-6b7de90dd84a)# garageReact
 El proyecto tiene como objetivo que tengas un medio sencillo y agil para vender tus cosas.
 Los features que tiene actualmente son:
 - Buscador de productos
 - Filtros/Ordenamiento
 - Resumen de ventas
+- Contacto por whatsapp indicando articulo
 
-Hay varios puntos de mejora, que espero que cada un@ pueda explotar a su necesidad 😎
+Hay varios puntos de mejora, como agregar carrito, cantidades, details... 
+En fin que espero que cada un@ pueda explotarlo a su necesidad 😎
+
 
 ## Prerequisitos
 - Crear hoja en google sheets, siguiendo la referencia de columnas del archivo example.xls
@@ -16,12 +19,18 @@ Hay varios puntos de mejora, que espero que cada un@ pueda explotar a su necesid
 React + CSS
 
 ## Utilizacion
-
 Dado los prereqs.
 - Parametrizar el config.json con sus mensajes, datos personales y de contacto.
 - A vender :)
 
-  ## Live Demo
+## Live Demo
   https://ventadymtest.netlify.app/
+
+## Capturas
+
+![image](https://github.com/mtofani/garageReact/assets/69044164/9f20496a-0d05-4d45-a981-fddb2ea26a63)
+
+
+![image](https://github.com/mtofani/garageReact/assets/69044164/a0150ab3-c690-4d6e-a780-cbbea01b1698)
 
   
